@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5EAEEC1129A2245C000B0B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1029A2245C000B0B5A /* AppDelegate.swift */; };
+		5EAEEC1329A2245C000B0B5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1229A2245C000B0B5A /* SceneDelegate.swift */; };
+		5EAEEC1529A2245C000B0B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1429A2245C000B0B5A /* ViewController.swift */; };
+		5EAEEC1829A2245C000B0B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1629A2245C000B0B5A /* Main.storyboard */; };
+		5EAEEC1A29A2245E000B0B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1929A2245E000B0B5A /* Assets.xcassets */; };
+		5EAEEC1D29A2245E000B0B5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1B29A2245E000B0B5A /* LaunchScreen.storyboard */; };
+		5EAEEC2829A2245E000B0B5A /* BroccoliAndCoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC2729A2245E000B0B5A /* BroccoliAndCoTests.swift */; };
+		5EAEEC3229A2245E000B0B5A /* BroccoliAndCoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC3129A2245E000B0B5A /* BroccoliAndCoUITests.swift */; };
+		5EAEEC3429A2245E000B0B5A /* BroccoliAndCoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC3329A2245E000B0B5A /* BroccoliAndCoUITestsLaunchTests.swift */; };
+		5EAEEC4229A2269E000B0B5A /* MusticaPro-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EAEEC4129A2269E000B0B5A /* MusticaPro-SemiBold.otf */; };
+		5EC0ADE129A2294A00389134 /* helveticaneuebold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EC0ADE029A2294900389134 /* helveticaneuebold.ttf */; };
+		5EC0ADE329A251F100389134 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0ADE229A251F100389134 /* Extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EAEEC2429A2245E000B0B5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EAEEC0529A2245C000B0B5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EAEEC0C29A2245C000B0B5A;
+			remoteInfo = BroccoliAndCo;
+		};
+		5EAEEC2E29A2245E000B0B5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EAEEC0529A2245C000B0B5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EAEEC0C29A2245C000B0B5A;
+			remoteInfo = BroccoliAndCo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5EAEEC0D29A2245C000B0B5A /* BroccoliAndCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BroccoliAndCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EAEEC1029A2245C000B0B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5EAEEC1229A2245C000B0B5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5EAEEC1429A2245C000B0B5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5EAEEC1729A2245C000B0B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5EAEEC1929A2245E000B0B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5EAEEC1C29A2245E000B0B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5EAEEC1E29A2245E000B0B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EAEEC2329A2245E000B0B5A /* BroccoliAndCoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BroccoliAndCoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EAEEC2729A2245E000B0B5A /* BroccoliAndCoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroccoliAndCoTests.swift; sourceTree = "<group>"; };
+		5EAEEC2D29A2245E000B0B5A /* BroccoliAndCoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BroccoliAndCoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EAEEC3129A2245E000B0B5A /* BroccoliAndCoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroccoliAndCoUITests.swift; sourceTree = "<group>"; };
+		5EAEEC3329A2245E000B0B5A /* BroccoliAndCoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroccoliAndCoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5EAEEC4129A2269E000B0B5A /* MusticaPro-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MusticaPro-SemiBold.otf"; sourceTree = "<group>"; };
+		5EC0ADE029A2294900389134 /* helveticaneuebold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = helveticaneuebold.ttf; sourceTree = "<group>"; };
+		5EC0ADE229A251F100389134 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EAEEC0A29A2245C000B0B5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EAEEC2029A2245E000B0B5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EAEEC2A29A2245E000B0B5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5EAEEC0429A2245C000B0B5A = {
+			isa = PBXGroup;
+			children = (
+				5EAEEC0F29A2245C000B0B5A /* BroccoliAndCo */,
+				5EAEEC2629A2245E000B0B5A /* BroccoliAndCoTests */,
+				5EAEEC3029A2245E000B0B5A /* BroccoliAndCoUITests */,
+				5EAEEC0E29A2245C000B0B5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5EAEEC0E29A2245C000B0B5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EAEEC0D29A2245C000B0B5A /* BroccoliAndCo.app */,
+				5EAEEC2329A2245E000B0B5A /* BroccoliAndCoTests.xctest */,
+				5EAEEC2D29A2245E000B0B5A /* BroccoliAndCoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EAEEC0F29A2245C000B0B5A /* BroccoliAndCo */ = {
+			isa = PBXGroup;
+			children = (
+				5EAEEC4029A2265E000B0B5A /* Fonts */,
+				5EAEEC1029A2245C000B0B5A /* AppDelegate.swift */,
+				5EAEEC1229A2245C000B0B5A /* SceneDelegate.swift */,
+				5EAEEC1429A2245C000B0B5A /* ViewController.swift */,
+				5EAEEC1629A2245C000B0B5A /* Main.storyboard */,
+				5EAEEC1929A2245E000B0B5A /* Assets.xcassets */,
+				5EAEEC1B29A2245E000B0B5A /* LaunchScreen.storyboard */,
+				5EAEEC1E29A2245E000B0B5A /* Info.plist */,
+				5EC0ADE229A251F100389134 /* Extension.swift */,
+			);
+			path = BroccoliAndCo;
+			sourceTree = "<group>";
+		};
+		5EAEEC2629A2245E000B0B5A /* BroccoliAndCoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EAEEC2729A2245E000B0B5A /* BroccoliAndCoTests.swift */,
+			);
+			path = BroccoliAndCoTests;
+			sourceTree = "<group>";
+		};
+		5EAEEC3029A2245E000B0B5A /* BroccoliAndCoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5EAEEC3129A2245E000B0B5A /* BroccoliAndCoUITests.swift */,
+				5EAEEC3329A2245E000B0B5A /* BroccoliAndCoUITestsLaunchTests.swift */,
+			);
+			path = BroccoliAndCoUITests;
+			sourceTree = "<group>";
+		};
+		5EAEEC4029A2265E000B0B5A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5EC0ADE029A2294900389134 /* helveticaneuebold.ttf */,
+				5EAEEC4129A2269E000B0B5A /* MusticaPro-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5EAEEC0C29A2245C000B0B5A /* BroccoliAndCo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EAEEC3729A2245E000B0B5A /* Build configuration list for PBXNativeTarget "BroccoliAndCo" */;
+			buildPhases = (
+				5EAEEC0929A2245C000B0B5A /* Sources */,
+				5EAEEC0A29A2245C000B0B5A /* Frameworks */,
+				5EAEEC0B29A2245C000B0B5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BroccoliAndCo;
+			productName = BroccoliAndCo;
+			productReference = 5EAEEC0D29A2245C000B0B5A /* BroccoliAndCo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5EAEEC2229A2245E000B0B5A /* BroccoliAndCoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EAEEC3A29A2245E000B0B5A /* Build configuration list for PBXNativeTarget "BroccoliAndCoTests" */;
+			buildPhases = (
+				5EAEEC1F29A2245E000B0B5A /* Sources */,
+				5EAEEC2029A2245E000B0B5A /* Frameworks */,
+				5EAEEC2129A2245E000B0B5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EAEEC2529A2245E000B0B5A /* PBXTargetDependency */,
+			);
+			name = BroccoliAndCoTests;
+			productName = BroccoliAndCoTests;
+			productReference = 5EAEEC2329A2245E000B0B5A /* BroccoliAndCoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5EAEEC2C29A2245E000B0B5A /* BroccoliAndCoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EAEEC3D29A2245E000B0B5A /* Build configuration list for PBXNativeTarget "BroccoliAndCoUITests" */;
+			buildPhases = (
+				5EAEEC2929A2245E000B0B5A /* Sources */,
+				5EAEEC2A29A2245E000B0B5A /* Frameworks */,
+				5EAEEC2B29A2245E000B0B5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EAEEC2F29A2245E000B0B5A /* PBXTargetDependency */,
+			);
+			name = BroccoliAndCoUITests;
+			productName = BroccoliAndCoUITests;
+			productReference = 5EAEEC2D29A2245E000B0B5A /* BroccoliAndCoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EAEEC0529A2245C000B0B5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					5EAEEC0C29A2245C000B0B5A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					5EAEEC2229A2245E000B0B5A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 5EAEEC0C29A2245C000B0B5A;
+					};
+					5EAEEC2C29A2245E000B0B5A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 5EAEEC0C29A2245C000B0B5A;
+					};
+				};
+			};
+			buildConfigurationList = 5EAEEC0829A2245C000B0B5A /* Build configuration list for PBXProject "BroccoliAndCo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5EAEEC0429A2245C000B0B5A;
+			productRefGroup = 5EAEEC0E29A2245C000B0B5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EAEEC0C29A2245C000B0B5A /* BroccoliAndCo */,
+				5EAEEC2229A2245E000B0B5A /* BroccoliAndCoTests */,
+				5EAEEC2C29A2245E000B0B5A /* BroccoliAndCoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EAEEC0B29A2245C000B0B5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EAEEC1D29A2245E000B0B5A /* LaunchScreen.storyboard in Resources */,
+				5EC0ADE129A2294A00389134 /* helveticaneuebold.ttf in Resources */,
+				5EAEEC1A29A2245E000B0B5A /* Assets.xcassets in Resources */,
+				5EAEEC4229A2269E000B0B5A /* MusticaPro-SemiBold.otf in Resources */,
+				5EAEEC1829A2245C000B0B5A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EAEEC2129A2245E000B0B5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EAEEC2B29A2245E000B0B5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EAEEC0929A2245C000B0B5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EAEEC1529A2245C000B0B5A /* ViewController.swift in Sources */,
+				5EAEEC1129A2245C000B0B5A /* AppDelegate.swift in Sources */,
+				5EAEEC1329A2245C000B0B5A /* SceneDelegate.swift in Sources */,
+				5EC0ADE329A251F100389134 /* Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EAEEC1F29A2245E000B0B5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EAEEC2829A2245E000B0B5A /* BroccoliAndCoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EAEEC2929A2245E000B0B5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EAEEC3229A2245E000B0B5A /* BroccoliAndCoUITests.swift in Sources */,
+				5EAEEC3429A2245E000B0B5A /* BroccoliAndCoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EAEEC2529A2245E000B0B5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EAEEC0C29A2245C000B0B5A /* BroccoliAndCo */;
+			targetProxy = 5EAEEC2429A2245E000B0B5A /* PBXContainerItemProxy */;
+		};
+		5EAEEC2F29A2245E000B0B5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EAEEC0C29A2245C000B0B5A /* BroccoliAndCo */;
+			targetProxy = 5EAEEC2E29A2245E000B0B5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5EAEEC1629A2245C000B0B5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EAEEC1729A2245C000B0B5A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5EAEEC1B29A2245E000B0B5A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EAEEC1C29A2245E000B0B5A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5EAEEC3529A2245E000B0B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5EAEEC3629A2245E000B0B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EAEEC3829A2245E000B0B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 267YL39X87;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BroccoliAndCo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HoangLinh.BroccoliAndCo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5EAEEC3929A2245E000B0B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 267YL39X87;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BroccoliAndCo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HoangLinh.BroccoliAndCo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5EAEEC3B29A2245E000B0B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 267YL39X87;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HoangLinh.BroccoliAndCoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BroccoliAndCo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BroccoliAndCo";
+			};
+			name = Debug;
+		};
+		5EAEEC3C29A2245E000B0B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 267YL39X87;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HoangLinh.BroccoliAndCoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BroccoliAndCo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BroccoliAndCo";
+			};
+			name = Release;
+		};
+		5EAEEC3E29A2245E000B0B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 267YL39X87;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HoangLinh.BroccoliAndCoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BroccoliAndCo;
+			};
+			name = Debug;
+		};
+		5EAEEC3F29A2245E000B0B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 267YL39X87;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HoangLinh.BroccoliAndCoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BroccoliAndCo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EAEEC0829A2245C000B0B5A /* Build configuration list for PBXProject "BroccoliAndCo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EAEEC3529A2245E000B0B5A /* Debug */,
+				5EAEEC3629A2245E000B0B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EAEEC3729A2245E000B0B5A /* Build configuration list for PBXNativeTarget "BroccoliAndCo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EAEEC3829A2245E000B0B5A /* Debug */,
+				5EAEEC3929A2245E000B0B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EAEEC3A29A2245E000B0B5A /* Build configuration list for PBXNativeTarget "BroccoliAndCoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EAEEC3B29A2245E000B0B5A /* Debug */,
+				5EAEEC3C29A2245E000B0B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EAEEC3D29A2245E000B0B5A /* Build configuration list for PBXNativeTarget "BroccoliAndCoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EAEEC3E29A2245E000B0B5A /* Debug */,
+				5EAEEC3F29A2245E000B0B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5EAEEC0529A2245C000B0B5A /* Project object */;
+}
