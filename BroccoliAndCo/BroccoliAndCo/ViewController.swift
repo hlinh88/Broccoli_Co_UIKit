@@ -46,7 +46,6 @@ class ViewController: UIViewController {
         //        let navVC = UINavigationController(rootViewController: rootVC)
         //        navVC.modalPresentationStyle = .fullScreen
         //        present(navVC, animated: true)
-        print("Hi")
         if sender.isSelected == true {
             sender.backgroundColor = UIColor.white
             sender.setTitleColor(UIColor.black, for: .normal)
