@@ -72,8 +72,8 @@ class ViewController: UIViewController {
         button.setTitleColor(UIColor.black, for: .normal)
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
-        button.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 15)
-        button.contentEdgeInsets = UIEdgeInsets(top: 7, left: 15, bottom: 7, right: 15)
+        button.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 17)
+        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 18, bottom: 10, right: 18)
         button.addTarget(self, action: #selector(buttonAction), for: .touchDown)
         
         button.clipsToBounds = true
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false //dont use autolayout constraints
         
         button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true //center the button on the x axis
-        button.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 100).isActive = true //set a bottom anchor to the button
+        button.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 140).isActive = true //set a bottom anchor to the button
         
     }
     
@@ -104,7 +104,7 @@ class ViewController: UIViewController {
         text.translatesAutoresizingMaskIntoConstraints = false
         
         text.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        text.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive = true
+        text.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 70).isActive = true
     }
     
     //constraints for the name label
