@@ -20,15 +20,11 @@ class InviteViewController: UIViewController, FormViewDelegate{
     
     var name: String = ""
     var email: String = ""
-    var errMess: String = ""
-    var isSuccess: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        //configure all the view elements and contraints
         configureViews()
-        //bar button to dismiss the view
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(dismissSelf))
     }
     
@@ -81,13 +77,15 @@ class InviteViewController: UIViewController, FormViewDelegate{
         formConfigurator.validTitleColor = UIColor.dodgerBlue
         formConfigurator.titleFont = UIFont(name: "MusticaPro-SemiBold", size: 15)!
         formConfigurator.placeholderTextColor = UIColor.lightGray
-        formConfigurator.placeholderFont = UIFont(name: "MusticaPro-SemiBold", size: 15)!
+        formConfigurator.placeholderFont = UIFont(name: "MusticaPro-SemiBold", size: 14)!
         formConfigurator.validBorderColor = UIColor.gray
         formConfigurator.editingBorderColor = UIColor.dodgerBlue
         formConfigurator.invalidBorderColor = UIColor.red
         formConfigurator.validTitleColor = UIColor.gray
         formConfigurator.editingTitleColor = UIColor.dodgerBlue
         formConfigurator.invalidTitleColor = UIColor.red
+        formConfigurator.textColor = UIColor.black
+       
         
         formConfigurator.isScrollEnabled = false
        
@@ -133,6 +131,11 @@ class InviteViewController: UIViewController, FormViewDelegate{
     
     @objc
     func submitButtonTapped(sender: UIButton!) {
+        let navView = UINavigationController(rootViewController: CongratViewController())
+        navView.modalPresentationStyle = .fullScreen
+        present(navView, animated: true)
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         sender.backgroundColor = UIColor.black
         sender.setTitleColor(UIColor.white, for: .normal)
         sender.isSelected = true
@@ -141,7 +144,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
             sender.setTitleColor(UIColor.black, for: .normal)
             sender.isSelected = false
         }
-        print("Hi")
+     
     }
     
 }
@@ -164,19 +167,20 @@ class InviteViewModel: FormViewModel {
 
     //Validate the name
     func NameItem() -> FormItem {
-        let nameField = FormField(name: "Full name",
+        let nameField = FormField(name: FieldName.name.rawValue,
                                   initialValue: "",
                                   placeholder: FieldName.name.rawValue,
                                   fieldType: .regular,
                                   isValid: false,
                                   errorMessage: "Full name must be at least 3 characters long")
         nameField.minimumTextLength = 3
+        
         return TextFieldCellItem(with: nameField)
     }
     
     //validate the email
     func EmailItem() -> FormItem {
-        let emailField = FormField(name: "Email",
+        let emailField = FormField(name: FieldName.email.rawValue,
                                    initialValue: "",
                                    placeholder: FieldName.email.rawValue,
                                    fieldType: .email,
@@ -187,7 +191,7 @@ class InviteViewModel: FormViewModel {
     
     //check if the emails match
     func confirmEmailItem() -> FormItem {
-        let confirmEmailField = FormField(name: "Confirm Email",
+        let confirmEmailField = FormField(name: FieldName.confirmEmail.rawValue,
                                           initialValue: "",
                                           placeholder: FieldName.confirmEmail.rawValue,
                                           fieldType: .email,

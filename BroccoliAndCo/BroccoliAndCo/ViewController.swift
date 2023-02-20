@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         buttonConstraints()
         subNameConstraints()
         nameConstraints()
@@ -33,8 +34,8 @@ class ViewController: UIViewController {
     
 
     @objc func buttonAction(sender: UIButton!) {
-        let navView = UINavigationController(rootViewController: InviteViewController())
-        navView.modalPresentationStyle = .formSheet
+        let navView = UINavigationController(rootViewController: CongratViewController())
+        navView.modalPresentationStyle = .fullScreen
         present(navView, animated: true)
         
         sender.backgroundColor = UIColor.black
