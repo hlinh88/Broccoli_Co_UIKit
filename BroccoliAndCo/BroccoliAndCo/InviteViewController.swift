@@ -16,7 +16,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
     var titleLabel = UILabel()
     var dismissButton = UIButton()
     
-    var formHelper = InviteViewModel()
+    var formModel = InviteViewModel()
     
     var name: String = ""
     var email: String = ""
@@ -75,8 +75,25 @@ class InviteViewController: UIViewController, FormViewDelegate{
     
     
     func configureFormView() {
+        let formConfigurator = FormConfigurator()
+        formConfigurator.borderCornerRadius = 8
+        formConfigurator.borderWidth = 2
+        formConfigurator.validTitleColor = UIColor.dodgerBlue
+        formConfigurator.titleFont = UIFont(name: "MusticaPro-SemiBold", size: 15)!
+        formConfigurator.placeholderTextColor = UIColor.lightGray
+        formConfigurator.placeholderFont = UIFont(name: "MusticaPro-SemiBold", size: 15)!
+        formConfigurator.validBorderColor = UIColor.gray
+        formConfigurator.editingBorderColor = UIColor.dodgerBlue
+        formConfigurator.invalidBorderColor = UIColor.red
+        formConfigurator.validTitleColor = UIColor.gray
+        formConfigurator.editingTitleColor = UIColor.dodgerBlue
+        formConfigurator.invalidTitleColor = UIColor.red
+        
+        formConfigurator.isScrollEnabled = false
+       
+        formView.formConfigurator = formConfigurator
         formView.delegate = self
-        formView.viewModel = formHelper //configure the form using the model
+        formView.viewModel = formModel
         formView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(formView)
     }
@@ -140,14 +157,14 @@ class InviteViewModel: FormViewModel {
     }
     
     enum FieldName: String {
-        case name = "FULL NAME"
-        case email = "EMAIL"
-        case confirmEmail = "CONFIRM EMAIL"
+        case name = "Full name"
+        case email = "Email"
+        case confirmEmail = "Confirm Email"
     }
 
     //Validate the name
     func NameItem() -> FormItem {
-        let nameField = FormField(name: FieldName.name.rawValue,
+        let nameField = FormField(name: "Full name",
                                   initialValue: "",
                                   placeholder: FieldName.name.rawValue,
                                   fieldType: .regular,
@@ -159,7 +176,7 @@ class InviteViewModel: FormViewModel {
     
     //validate the email
     func EmailItem() -> FormItem {
-        let emailField = FormField(name: FieldName.email.rawValue,
+        let emailField = FormField(name: "Email",
                                    initialValue: "",
                                    placeholder: FieldName.email.rawValue,
                                    fieldType: .email,
@@ -170,7 +187,7 @@ class InviteViewModel: FormViewModel {
     
     //check if the emails match
     func confirmEmailItem() -> FormItem {
-        let confirmEmailField = FormField(name: FieldName.confirmEmail.rawValue,
+        let confirmEmailField = FormField(name: "Confirm Email",
                                           initialValue: "",
                                           placeholder: FieldName.confirmEmail.rawValue,
                                           fieldType: .email,
