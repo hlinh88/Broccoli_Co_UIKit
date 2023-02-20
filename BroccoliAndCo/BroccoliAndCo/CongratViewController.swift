@@ -70,7 +70,6 @@ class CongratViewController: UIViewController {
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 8
         button.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 17)
-        button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 50, bottom: 12, right: 50)
         button.addTarget(self, action: #selector(doneAction), for: .touchDown)
         button.clipsToBounds = true
         button.tintColor = UIColor.white
@@ -80,6 +79,8 @@ class CongratViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 500).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
     @objc private func doneAction(sender: UIButton!){
@@ -91,19 +92,12 @@ class CongratViewController: UIViewController {
             sender.setTitleColor(UIColor.black, for: .normal)
             sender.isSelected = false
         }
-        let navView = UINavigationController(rootViewController: ViewController())
+        let navView = UINavigationController(rootViewController: CancelInviteViewController())
         navView.modalPresentationStyle = .fullScreen
         present(navView, animated: true)
         
     }
-    
-    //move to the next view on button press
-    @objc func cancelAction(sender: UIButton!) {
-//        let vc = CancelInviteViewController()
-//        vc.view.backgroundColor = .white
-//        navigationController?.pushViewController(vc, animated: true)
-//        self.navigationItem.setHidesBackButton(true, animated: true)
-    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

@@ -1,17 +1,14 @@
 //
-//  ViewController.swift
+//  CancelInviteViewController.swift
 //  BroccoliAndCo
 //
-//  Created by Hoang Linh Nguyen on 19/2/2023.
+//  Created by Hoang Linh Nguyen on 20/2/2023.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    var isHighLighted : Bool = false
+class CancelInviteViewController: UIViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -21,41 +18,41 @@ class ViewController: UIViewController {
         buttomTitleConstraints()
         titleConstraints()
     }
-    
-    //if the user sent an invite before, move to this view
-    //    func showCancelScreen() {
-    //        DispatchQueue.main.async {
-    //            let vc = CancelViewController()
-    //            vc.view.backgroundColor = .white
-    //            self.navigationController?.pushViewController(vc, animated: true)
-    //            self.navigationItem.setHidesBackButton(true, animated: true)
-    //        }
-    //    }
-    
 
     @objc func buttonAction(sender: UIButton!) {
-        let navView = UINavigationController(rootViewController: CongratViewController())
-        navView.modalPresentationStyle = .fullScreen
-        present(navView, animated: true)
+//        let navView = UINavigationController(rootViewController: CongratViewController())
+//        navView.modalPresentationStyle = .fullScreen
+//        present(navView, animated: true)
         
-        sender.backgroundColor = UIColor.black
-        sender.setTitleColor(UIColor.white, for: .normal)
+        let alert = UIAlertController(title: "Are you sure you want to cancel the invite?", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
+            print("Hi")
+        }))
+        
+        self.present(alert, animated: true)
+        
+        sender.backgroundColor = UIColor.white
+        sender.setTitleColor(UIColor.black, for: .normal)
+        sender.layer.borderColor = UIColor.black.cgColor
         sender.isSelected = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            sender.backgroundColor = UIColor.white
-            sender.setTitleColor(UIColor.black, for: .normal)
+            sender.backgroundColor = UIColor.black
+            sender.setTitleColor(UIColor.white, for: .normal)
+            sender.layer.borderColor = UIColor.white.cgColor
             sender.isSelected = false
         }
       
     }
 
+
     func buttonConstraints() {
         let button = UIButton()
-        button.backgroundColor =  UIColor.white //button color
-        button.setTitle(" Request an invite ", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
+        button.backgroundColor =  UIColor.black
+        button.setTitle(" Cancel invite ", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.white.cgColor
         button.layer.cornerRadius = 8
         button.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 17)
         button.addTarget(self, action: #selector(buttonAction), for: .touchDown)
