@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         buttonConstraints()
         subNameConstraints()
         nameConstraints()
-        buttomTitleConstraints()
+        bottomTitleConstraints()
         titleConstraints()
     }
     
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
     }
     
     
-    func buttomTitleConstraints() {
+    func bottomTitleConstraints() {
         let label = UILabel()
         label.frame = CGRect(x: label.frame.origin.x, y: label.frame.origin.y, width: label.frame.width, height: label.frame.height)
         label.textAlignment = .center

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5EA7E42A29A386520001DEFC /* CongratViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7E42929A386520001DEFC /* CongratViewController.swift */; };
 		5EA7E42C29A3C7F90001DEFC /* CancelInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7E42B29A3C7F90001DEFC /* CancelInviteViewController.swift */; };
+		5EA7E42E29A3CF4E0001DEFC /* CancelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7E42D29A3CF4E0001DEFC /* CancelViewController.swift */; };
 		5EAEEC1129A2245C000B0B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1029A2245C000B0B5A /* AppDelegate.swift */; };
 		5EAEEC1329A2245C000B0B5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1229A2245C000B0B5A /* SceneDelegate.swift */; };
 		5EAEEC1529A2245C000B0B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAEEC1429A2245C000B0B5A /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		5B7756F840340F69196EB111 /* Pods-BroccoliAndCo-BroccoliAndCoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroccoliAndCo-BroccoliAndCoUITests.debug.xcconfig"; path = "Target Support Files/Pods-BroccoliAndCo-BroccoliAndCoUITests/Pods-BroccoliAndCo-BroccoliAndCoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EA7E42929A386520001DEFC /* CongratViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratViewController.swift; sourceTree = "<group>"; };
 		5EA7E42B29A3C7F90001DEFC /* CancelInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelInviteViewController.swift; sourceTree = "<group>"; };
+		5EA7E42D29A3CF4E0001DEFC /* CancelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelViewController.swift; sourceTree = "<group>"; };
 		5EAEEC0D29A2245C000B0B5A /* BroccoliAndCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BroccoliAndCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAEEC1029A2245C000B0B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EAEEC1229A2245C000B0B5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,12 +146,13 @@
 				5EAEEC1429A2245C000B0B5A /* ViewController.swift */,
 				5EC0ADE429A26D6A00389134 /* InviteViewController.swift */,
 				5EA7E42929A386520001DEFC /* CongratViewController.swift */,
+				5EA7E42B29A3C7F90001DEFC /* CancelInviteViewController.swift */,
+				5EA7E42D29A3CF4E0001DEFC /* CancelViewController.swift */,
 				5EC0ADE229A251F100389134 /* Extension.swift */,
 				5EAEEC1629A2245C000B0B5A /* Main.storyboard */,
 				5EAEEC1929A2245E000B0B5A /* Assets.xcassets */,
 				5EAEEC1B29A2245E000B0B5A /* LaunchScreen.storyboard */,
 				5EAEEC1E29A2245E000B0B5A /* Info.plist */,
-				5EA7E42B29A3C7F90001DEFC /* CancelInviteViewController.swift */,
 			);
 			path = BroccoliAndCo;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			files = (
 				5EAEEC1529A2245C000B0B5A /* ViewController.swift in Sources */,
 				5EA7E42A29A386520001DEFC /* CongratViewController.swift in Sources */,
+				5EA7E42E29A3CF4E0001DEFC /* CancelViewController.swift in Sources */,
 				5EAEEC1129A2245C000B0B5A /* AppDelegate.swift in Sources */,
 				5EAEEC1329A2245C000B0B5A /* SceneDelegate.swift in Sources */,
 				5EC0ADE329A251F100389134 /* Extension.swift in Sources */,

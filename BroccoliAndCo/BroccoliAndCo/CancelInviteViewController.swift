@@ -15,19 +15,17 @@ class CancelInviteViewController: UIViewController {
         buttonConstraints()
         subNameConstraints()
         nameConstraints()
-        buttomTitleConstraints()
+        bottomTitleConstraints()
         titleConstraints()
     }
 
     @objc func buttonAction(sender: UIButton!) {
-//        let navView = UINavigationController(rootViewController: CongratViewController())
-//        navView.modalPresentationStyle = .fullScreen
-//        present(navView, animated: true)
-        
         let alert = UIAlertController(title: "Are you sure you want to cancel the invite?", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
-            print("Hi")
+            let navView = UINavigationController(rootViewController: CancelViewController())
+            navView.modalPresentationStyle = .fullScreen
+            self.present(navView, animated: true)
         }))
         
         self.present(alert, animated: true)
@@ -108,7 +106,7 @@ class CancelInviteViewController: UIViewController {
     }
     
     
-    func buttomTitleConstraints() {
+    func bottomTitleConstraints() {
         let label = UILabel()
         label.frame = CGRect(x: label.frame.origin.x, y: label.frame.origin.y, width: label.frame.width, height: label.frame.height)
         label.textAlignment = .center

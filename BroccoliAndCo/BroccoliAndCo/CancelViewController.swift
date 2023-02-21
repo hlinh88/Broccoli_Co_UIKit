@@ -1,5 +1,5 @@
 //
-//  CongratViewController.swift
+//  CancelViewController.swift
 //  BroccoliAndCo
 //
 //  Created by Hoang Linh Nguyen on 20/2/2023.
@@ -9,7 +9,8 @@ import UIKit
 import SwiftConfettiView
 import SwiftGifOrigin
 
-class CongratViewController: UIViewController {
+class CancelViewController : UIViewController {
+
 
     
     override func viewDidLoad() {
@@ -20,19 +21,20 @@ class CongratViewController: UIViewController {
         //init confetti effect
         let confettiView = SwiftConfettiView(frame: self.view.bounds)
         confettiView.intensity = 1
-        confettiView.type = .confetti
+        confettiView.type = .diamond
         confettiView.startConfetti()
         self.view.addSubview(confettiView)
        
 
         successConstraints()
         labelConstraints()
+        subLabelConstraints()
         doneButtonConstraints()
     }
     
     func successConstraints() {
         let image = UIImageView()
-        image.loadGif(asset: "success")
+        image.loadGif(asset: "cancel")
         
         self.view.addSubview(image)
         
@@ -48,7 +50,7 @@ class CongratViewController: UIViewController {
         let label = UILabel()
         label.frame = CGRect(x: label.frame.origin.x, y: label.frame.origin.y, width: label.frame.width, height: label.frame.height)
         label.textAlignment = .center
-        label.text = "You will be one of the first to experience Broccoli & Co. when we launch."
+        label.text = "Invite cancelled successfully"
         label.font = UIFont(name: "MusticaPro-SemiBold", size: 18)
         label.numberOfLines = 0;
         label.sizeToFit()
@@ -61,22 +63,38 @@ class CongratViewController: UIViewController {
         label.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 400).isActive = true
     }
     
+    func subLabelConstraints() {
+        let label = UILabel()
+        label.frame = CGRect(x: label.frame.origin.x, y: label.frame.origin.y, width: label.frame.width, height: label.frame.height)
+        label.textAlignment = .center
+        label.text = "We are sad to see you go."
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.numberOfLines = 0;
+        label.sizeToFit()
+        label.preferredMaxLayoutWidth = label.frame.width - 300
+        self.view.addSubview(label)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        label.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 450).isActive = true
+    }
+    
     func doneButtonConstraints() {
         let button = UIButton()
-        button.backgroundColor =  UIColor.white //button color
+        button.backgroundColor =  UIColor.black
         button.setTitle("Done", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.white.cgColor
         button.layer.cornerRadius = 8
         button.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 17)
         button.addTarget(self, action: #selector(doneAction), for: .touchDown)
         button.clipsToBounds = true
-        button.tintColor = UIColor.white
-        
         self.view.addSubview(button)
         
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 500).isActive = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -84,15 +102,17 @@ class CongratViewController: UIViewController {
     }
     
     @objc private func doneAction(sender: UIButton!){
-        sender.backgroundColor = UIColor.black
-        sender.setTitleColor(UIColor.white, for: .normal)
+        sender.backgroundColor = UIColor.white
+        sender.setTitleColor(UIColor.black, for: .normal)
+        sender.layer.borderColor = UIColor.black.cgColor
         sender.isSelected = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            sender.backgroundColor = UIColor.white
-            sender.setTitleColor(UIColor.black, for: .normal)
+            sender.backgroundColor = UIColor.black
+            sender.setTitleColor(UIColor.white, for: .normal)
+            sender.layer.borderColor = UIColor.white.cgColor
             sender.isSelected = false
         }
-        let navView = UINavigationController(rootViewController: CancelInviteViewController())
+        let navView = UINavigationController(rootViewController: ViewController())
         navView.modalPresentationStyle = .fullScreen
         present(navView, animated: true)
         
