@@ -20,6 +20,8 @@ class InviteViewController: UIViewController, FormViewDelegate{
     
     var name: String = ""
     var email: String = ""
+    var errMess: String = ""
+    var isSuccess: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,10 +87,10 @@ class InviteViewController: UIViewController, FormViewDelegate{
         formConfigurator.editingTitleColor = UIColor.dodgerBlue
         formConfigurator.invalidTitleColor = UIColor.red
         formConfigurator.textColor = UIColor.black
-       
+        
         
         formConfigurator.isScrollEnabled = false
-       
+        
         formView.formConfigurator = formConfigurator
         formView.delegate = self
         formView.viewModel = formModel
@@ -97,7 +99,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
     }
     
     func configureConstraints(){
-
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
@@ -114,7 +116,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
             submitButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-
+    
     func updateSubmitButton(enabled: Bool) {
         let backgroundColor = enabled ? UIColor.white : UIColor.brightGray.withAlphaComponent(0.4)
         let textColor = enabled ? UIColor.black : UIColor.white
@@ -131,10 +133,27 @@ class InviteViewController: UIViewController, FormViewDelegate{
     
     @objc
     func submitButtonTapped(sender: UIButton!) {
-        let navView = UINavigationController(rootViewController: CongratViewController())
-        navView.modalPresentationStyle = .fullScreen
-        present(navView, animated: true)
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        // get name and email value from form view
+        formModel.fields().forEach {
+            if ($0.name == "Full name" )
+            {
+                self.name = $0.value
+            }
+            if ($0.name == "Email" )
+            {
+                self.email = $0.value
+            }
+        }
+        print("name: \(name)")
+        print("email: \(email)")
+        
+        requestData(name: self.name, email: self.email){ (isSuccess) in
+            if isSuccess{
+                print("Success")
+            }else{
+                print("Unsuccess")
+            }
+        }
         
         sender.backgroundColor = UIColor.black
         sender.setTitleColor(UIColor.white, for: .normal)
@@ -144,9 +163,58 @@ class InviteViewController: UIViewController, FormViewDelegate{
             sender.setTitleColor(UIColor.black, for: .normal)
             sender.isSelected = false
         }
-     
+        
     }
     
+    func requestData(name: String,  email: String, _ completion:@escaping (_ isSuccess:Bool)->Void) {
+        
+        //Validation email: usedemail@blinq.app
+        
+        let body: [String: Any] = ["name": name, "email": email]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: body)
+        
+        let url = URL(string: "https://us-central1-blinkapp-684c1.cloudfunctions.net/fakeAuth")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { [self] data, response, error in
+         
+            if let data = data, let response = response as? HTTPURLResponse, error == nil{
+                if response.statusCode == 400 {
+                    let responseDecoded: Response = try! JSONDecoder().decode(Response.self, from: data)
+                    DispatchQueue.main.async {
+                        self.errMess = responseDecoded.errorMessage
+                        completion(false)
+                        self.isSuccess = false
+                        //display alert message on status 400
+                        let alert = UIAlertController(title: "Error Message", message: self.errMess, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                        self.present(alert, animated: true)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(true)
+                        self.isSuccess = true
+                        print("Response status code: \(response.statusCode)")
+                        // status code 200 move to next view
+                        let navView = UINavigationController(rootViewController: CongratViewController())
+                        navView.modalPresentationStyle = .fullScreen
+                        self.present(navView, animated: true)
+                        self.navigationItem.setHidesBackButton(true, animated: true)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    struct Response: Decodable {
+        let errorMessage: String
+    }
 }
 
 
@@ -164,7 +232,7 @@ class InviteViewModel: FormViewModel {
         case email = "Email"
         case confirmEmail = "Confirm Email"
     }
-
+    
     //Validate the name
     func NameItem() -> FormItem {
         let nameField = FormField(name: FieldName.name.rawValue,

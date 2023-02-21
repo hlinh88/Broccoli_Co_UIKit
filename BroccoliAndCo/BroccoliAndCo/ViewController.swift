@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
 
     @objc func buttonAction(sender: UIButton!) {
-        let navView = UINavigationController(rootViewController: CongratViewController())
+        let navView = UINavigationController(rootViewController: InviteViewController())
         navView.modalPresentationStyle = .fullScreen
         present(navView, animated: true)
         
