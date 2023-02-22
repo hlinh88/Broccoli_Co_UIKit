@@ -11,7 +11,7 @@ import SwiftGifOrigin
 
 class CancelViewController : UIViewController {
 
-
+    var isRegistered: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,8 @@ class CancelViewController : UIViewController {
         confettiView.startConfetti()
         self.view.addSubview(confettiView)
        
+        //save to User Defaults
+        UserDefaults.standard.set(isRegistered, forKey: "isRegistered")
 
         successConstraints()
         labelConstraints()

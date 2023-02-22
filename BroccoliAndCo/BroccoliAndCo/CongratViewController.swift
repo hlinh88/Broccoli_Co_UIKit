@@ -10,6 +10,8 @@ import SwiftConfettiView
 import SwiftGifOrigin
 
 class CongratViewController: UIViewController {
+    
+    var isRegistered: Bool = true
 
     
     override func viewDidLoad() {
@@ -24,6 +26,8 @@ class CongratViewController: UIViewController {
         confettiView.startConfetti()
         self.view.addSubview(confettiView)
        
+        //save to User Defaults
+        UserDefaults.standard.set(isRegistered, forKey: "isRegistered")
 
         successConstraints()
         labelConstraints()
