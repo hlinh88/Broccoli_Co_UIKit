@@ -79,7 +79,9 @@ class InviteViewController: UIViewController, FormViewDelegate{
         formConfigurator.validTitleColor = UIColor.dodgerBlue
         formConfigurator.titleFont = UIFont(name: "MusticaPro-SemiBold", size: 15)!
         formConfigurator.placeholderTextColor = UIColor.lightGray
-        formConfigurator.placeholderFont = UIFont(name: "MusticaPro-SemiBold", size: 14)!
+        formConfigurator.placeholderFont = UIFont(name: "MusticaPro-SemiBold", size: 15)!
+        formConfigurator.textFieldToBottomLineDistance = 15
+        formConfigurator.textFieldContainerToErrorLabelDistance = 5
         formConfigurator.validBorderColor = UIColor.gray
         formConfigurator.editingBorderColor = UIColor.dodgerBlue
         formConfigurator.invalidBorderColor = UIColor.red

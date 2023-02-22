@@ -20,15 +20,11 @@ class CancelInviteViewController: UIViewController {
     }
 
     @objc func buttonAction(sender: UIButton!) {
-        let alert = UIAlertController(title: "Are you sure you want to cancel the invite?", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
-            let navView = UINavigationController(rootViewController: CancelViewController())
-            navView.modalPresentationStyle = .fullScreen
-            self.present(navView, animated: true)
-        }))
-        
-        self.present(alert, animated: true)
+        let vc = PopUpViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
+
         
         sender.backgroundColor = UIColor.white
         sender.setTitleColor(UIColor.black, for: .normal)

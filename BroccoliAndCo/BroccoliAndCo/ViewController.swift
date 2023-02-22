@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         let navView = UINavigationController(rootViewController: InviteViewController())
         navView.modalPresentationStyle = .fullScreen
         present(navView, animated: true)
-        
+
         sender.backgroundColor = UIColor.black
         sender.setTitleColor(UIColor.white, for: .normal)
         sender.isSelected = true
