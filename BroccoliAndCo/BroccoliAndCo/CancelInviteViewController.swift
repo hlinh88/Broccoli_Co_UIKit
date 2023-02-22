@@ -20,7 +20,7 @@ class CancelInviteViewController: UIViewController {
     }
 
     @objc func buttonAction(sender: UIButton!) {
-        let vc = PopUpViewController()
+        let vc = PopUpViewController(text: "Are you sure you want to cancel the invite?", oneButton: false)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)

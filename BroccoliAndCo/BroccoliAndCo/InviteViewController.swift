@@ -193,9 +193,14 @@ class InviteViewController: UIViewController, FormViewDelegate{
                         completion(false)
                         self.isSuccess = false
                         //display alert message on status 400
-                        let alert = UIAlertController(title: "Error Message", message: self.errMess, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-                        self.present(alert, animated: true)
+//                        let alert = UIAlertController(title: "Error Message", message: self.errMess, preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+//                        self.present(alert, animated: true)
+                        
+                        let vc = PopUpViewController(text: self.errMess, oneButton: true)
+                        vc.modalPresentationStyle = .overCurrentContext
+                        vc.modalTransitionStyle = .crossDissolve
+                        self.present(vc, animated: true, completion: nil)
                     }
                 } else {
                     DispatchQueue.main.async {

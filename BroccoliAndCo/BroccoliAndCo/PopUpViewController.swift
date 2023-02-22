@@ -9,6 +9,19 @@ import UIKit
 
 class PopUpViewController : UIViewController {
     
+    var text : String?
+    var oneButton : Bool?
+    
+    init(text: String, oneButton: Bool) {
+        self.text = text
+        self.oneButton = oneButton
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     let popupBox: UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.black.cgColor
@@ -29,7 +42,7 @@ class PopUpViewController : UIViewController {
         return stackView
     }()
     
-    let noButton : UIButton = {
+    private lazy var noButton : UIButton = {
         let button = UIButton()
         button.backgroundColor =  UIColor.black //button color
         button.setTitle("No", for: .normal)
@@ -43,7 +56,7 @@ class PopUpViewController : UIViewController {
         return button
     }()
     
-    let yesButton : UIButton = {
+    private lazy var yesButton : UIButton = {
         let button = UIButton()
         button.backgroundColor =  UIColor.red //button color
         button.setTitle("Yes", for: .normal)
@@ -57,10 +70,26 @@ class PopUpViewController : UIViewController {
         return button
     }()
     
+    private lazy var dismissButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor =  UIColor.black //button color
+        button.setTitle("Dismiss", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = 8
+        button.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 17)
+        button.addTarget(self, action: #selector(dismissSelf), for: .touchDown)
+        button.clipsToBounds = true
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     let labelTitle : UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "Are you sure you want to cancel the invite?"
         label.font = UIFont(name: "MusticaPro-SemiBold", size: 18)
         label.numberOfLines = 0;
         label.sizeToFit()
@@ -76,18 +105,20 @@ class PopUpViewController : UIViewController {
         view.backgroundColor = .clear
         
         self.definesPresentationContext = true
-        
-        setupViews()
-        
+        if self.oneButton == true{
+            setupOneButton()
+        }else{
+            setupTwoButtons() 
+        }
+     
     }
     
     
-    func setupViews() {
+    func setupTwoButtons() {
+        labelTitle.text = self.text
+        
         view.addSubview(popupBox)
-        popupBox.addSubview(stackView)
         popupBox.addSubview(labelTitle)
-        stackView.addArrangedSubview(noButton)
-        stackView.addArrangedSubview(yesButton)
         
         // autolayout constraint for popupBox
         popupBox.heightAnchor.constraint(equalToConstant: 180).isActive = true
@@ -99,14 +130,45 @@ class PopUpViewController : UIViewController {
         labelTitle.centerXAnchor.constraint(equalTo: popupBox.centerXAnchor).isActive = true
         labelTitle.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
+        
+        popupBox.addSubview(stackView)
+        stackView.addArrangedSubview(noButton)
+        stackView.addArrangedSubview(yesButton)
+        
+        
         stackView.centerXAnchor.constraint(equalTo: popupBox.centerXAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: popupBox.bottomAnchor, constant: -20).isActive = true
         
         noButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         noButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
- 
+        
         yesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         yesButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+    
+    }
+    
+    func setupOneButton() {
+        labelTitle.text = self.text
+        
+        view.addSubview(popupBox)
+        popupBox.addSubview(labelTitle)
+        popupBox.addSubview(dismissButton)
+        
+        // autolayout constraint for popupBox
+        popupBox.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        popupBox.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        popupBox.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        popupBox.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        labelTitle.topAnchor.constraint(equalTo: popupBox.topAnchor, constant: 20).isActive = true
+        labelTitle.centerXAnchor.constraint(equalTo: popupBox.centerXAnchor).isActive = true
+        labelTitle.widthAnchor.constraint(equalToConstant: 200).isActive = true
+    
+        dismissButton.centerXAnchor.constraint(equalTo: popupBox.centerXAnchor).isActive = true
+        dismissButton.bottomAnchor.constraint(equalTo: popupBox.bottomAnchor, constant: -20).isActive = true
+        dismissButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        dismissButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+
     }
     
     @objc private func dismissSelf(){
