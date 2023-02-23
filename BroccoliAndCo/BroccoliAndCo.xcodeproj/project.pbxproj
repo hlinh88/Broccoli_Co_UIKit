@@ -24,6 +24,7 @@
 		5EC0ADE129A2294A00389134 /* helveticaneuebold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EC0ADE029A2294900389134 /* helveticaneuebold.ttf */; };
 		5EC0ADE329A251F100389134 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0ADE229A251F100389134 /* Extension.swift */; };
 		5EC0ADE529A26D6A00389134 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0ADE429A26D6A00389134 /* InviteViewController.swift */; };
+		5EDB605E29A68C7800EC9724 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDB605D29A68C7800EC9724 /* LoadingViewController.swift */; };
 		7B45807E16DA3EDE06314CE3 /* Pods_BroccoliAndCo_BroccoliAndCoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02643AEAB7A078622893897A /* Pods_BroccoliAndCo_BroccoliAndCoUITests.framework */; };
 		CEAE2D32DDB008C402A9AC42 /* Pods_BroccoliAndCoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6DF4389AA4150393DEF43A /* Pods_BroccoliAndCoTests.framework */; };
 		DA4BAF9149F1B834D72DEA66 /* Pods_BroccoliAndCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F5C5C8444E81FD418EF4F8 /* Pods_BroccoliAndCo.framework */; };
@@ -72,6 +73,7 @@
 		5EC0ADE029A2294900389134 /* helveticaneuebold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = helveticaneuebold.ttf; sourceTree = "<group>"; };
 		5EC0ADE229A251F100389134 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5EC0ADE429A26D6A00389134 /* InviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
+		5EDB605D29A68C7800EC9724 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		7680EBE618D50861487623CC /* Pods-BroccoliAndCoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroccoliAndCoTests.debug.xcconfig"; path = "Target Support Files/Pods-BroccoliAndCoTests/Pods-BroccoliAndCoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4D480D67DBD4FC1DDF10E8E /* Pods-BroccoliAndCoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroccoliAndCoTests.release.xcconfig"; path = "Target Support Files/Pods-BroccoliAndCoTests/Pods-BroccoliAndCoTests.release.xcconfig"; sourceTree = "<group>"; };
 		BDC2E83BD0762F5611F08979 /* Pods-BroccoliAndCo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroccoliAndCo.release.xcconfig"; path = "Target Support Files/Pods-BroccoliAndCo/Pods-BroccoliAndCo.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				5EA7E42B29A3C7F90001DEFC /* CancelInviteViewController.swift */,
 				5EA7E42D29A3CF4E0001DEFC /* CancelViewController.swift */,
 				5E03C16C29A50A2400576F72 /* PopUpViewController.swift */,
+				5EDB605D29A68C7800EC9724 /* LoadingViewController.swift */,
 				5EC0ADE229A251F100389134 /* Extension.swift */,
 				5EAEEC1629A2245C000B0B5A /* Main.storyboard */,
 				5EAEEC1929A2245E000B0B5A /* Assets.xcassets */,
@@ -447,6 +450,7 @@
 				5EAEEC1329A2245C000B0B5A /* SceneDelegate.swift in Sources */,
 				5EC0ADE329A251F100389134 /* Extension.swift in Sources */,
 				5EA7E42C29A3C7F90001DEFC /* CancelInviteViewController.swift in Sources */,
+				5EDB605E29A68C7800EC9724 /* LoadingViewController.swift in Sources */,
 				5E03C16D29A50A2400576F72 /* PopUpViewController.swift in Sources */,
 				5EC0ADE529A26D6A00389134 /* InviteViewController.swift in Sources */,
 			);

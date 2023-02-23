@@ -11,6 +11,7 @@ class CancelInviteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.definesPresentationContext = true
         view.backgroundColor = UIColor.white
         buttonConstraints()
         subNameConstraints()
@@ -56,7 +57,7 @@ class CancelInviteViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 140).isActive = true
+        button.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
@@ -79,7 +80,7 @@ class CancelInviteViewController: UIViewController {
         text.translatesAutoresizingMaskIntoConstraints = false
         
         text.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        text.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 70).isActive = true
+        text.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
     
 
@@ -97,7 +98,7 @@ class CancelInviteViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive = true
+        label.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -50).isActive = true
         
     }
     

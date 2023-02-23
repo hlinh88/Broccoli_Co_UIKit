@@ -15,6 +15,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
     var submitButton = UIButton(type: .custom)
     var titleLabel = UILabel()
     var dismissButton = UIButton()
+    var backButton = UIButton()
     
     var formModel = InviteViewModel()
     
@@ -22,16 +23,26 @@ class InviteViewController: UIViewController, FormViewDelegate{
     var email: String = ""
     var errMess: String = ""
     var isSuccess: Bool = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         configureViews()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(dismissSelf))
     }
     
-    @objc private func dismissSelf(){
-        dismiss(animated: true, completion: nil)
+    @objc private func dismissSelf(sender: UIButton!){
+        
+        sender.backgroundColor = UIColor.white
+        sender.setTitleColor(UIColor.black, for: .normal)
+        sender.layer.borderColor = UIColor.black.cgColor
+        sender.isSelected = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            sender.backgroundColor = UIColor.black
+            sender.setTitleColor(UIColor.white, for: .normal)
+            sender.layer.borderColor = UIColor.white.cgColor
+            sender.isSelected = false
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     //configure all UI elements
@@ -39,6 +50,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
         configureFormView()
         configureLabels()
         configureSubmitButton()
+        configureBackButton()
         configureConstraints()
     }
     
@@ -54,7 +66,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
         submitButton.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 18)
         submitButton.layer.borderWidth = 2
         submitButton.translatesAutoresizingMaskIntoConstraints = false
-        submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
+        submitButton.addTarget(self, action: #selector(submitButtonAction), for: .touchUpInside)
         
         view.addSubview(submitButton)
     }
@@ -90,7 +102,6 @@ class InviteViewController: UIViewController, FormViewDelegate{
         formConfigurator.invalidTitleColor = UIColor.red
         formConfigurator.textColor = UIColor.black
         
-        
         formConfigurator.isScrollEnabled = false
         
         formView.formConfigurator = formConfigurator
@@ -98,6 +109,19 @@ class InviteViewController: UIViewController, FormViewDelegate{
         formView.viewModel = formModel
         formView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(formView)
+    }
+    
+    func configureBackButton(){
+        backButton.layer.cornerRadius = 8
+        backButton.backgroundColor = UIColor.black
+        backButton.setTitle("Back", for: .normal)
+        backButton.setTitleColor(UIColor.white, for: .normal)
+        backButton.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 18)
+        backButton.layer.borderWidth = 2
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
+        
+        view.addSubview(backButton)
     }
     
     func configureConstraints(){
@@ -112,10 +136,16 @@ class InviteViewController: UIViewController, FormViewDelegate{
             formView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             formView.bottomAnchor.constraint(equalTo: submitButton.topAnchor, constant: -10),
             
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            backButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
+            backButton.heightAnchor.constraint(equalToConstant: 50),
+            
             submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-            submitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
-            submitButton.heightAnchor.constraint(equalToConstant: 50)
+            submitButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -20),
+            submitButton.heightAnchor.constraint(equalToConstant: 50),
+            
         ])
     }
     
@@ -134,7 +164,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
     }
     
     @objc
-    func submitButtonTapped(sender: UIButton!) {
+    func submitButtonAction(sender: UIButton!) {
         // get name and email value from form view
         formModel.fields().forEach {
             if ($0.name == "Full name" )
@@ -148,7 +178,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
         }
         print("name: \(name)")
         print("email: \(email)")
-        
+    
         requestData(name: self.name, email: self.email){ (isSuccess) in
             if isSuccess{
                 print("Success")
@@ -157,8 +187,8 @@ class InviteViewController: UIViewController, FormViewDelegate{
             }
         }
         
-        sender.backgroundColor = UIColor.black
-        sender.setTitleColor(UIColor.white, for: .normal)
+        sender.backgroundColor = UIColor.lightGray
+        sender.setTitleColor(UIColor.black, for: .normal)
         sender.isSelected = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             sender.backgroundColor = UIColor.white
@@ -166,11 +196,24 @@ class InviteViewController: UIViewController, FormViewDelegate{
             sender.isSelected = false
         }
         
+
+        
     }
     
     func requestData(name: String,  email: String, _ completion:@escaping (_ isSuccess:Bool)->Void) {
         
         //Validation email: usedemail@blinq.app
+        
+        
+        // TODO: fix loading view
+//        let loadingVC = LoadingViewController()
+//
+//        loadingVC.modalPresentationStyle = .overCurrentContext
+//
+//        loadingVC.modalTransitionStyle = .crossDissolve
+//
+//        self.present(loadingVC, animated: true, completion: nil)
+       
         
         let body: [String: Any] = ["name": name, "email": email]
         
@@ -184,7 +227,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
         request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) { [self] data, response, error in
-         
+            
             if let data = data, let response = response as? HTTPURLResponse, error == nil{
                 if response.statusCode == 400 {
                     let responseDecoded: Response = try! JSONDecoder().decode(Response.self, from: data)
@@ -193,10 +236,6 @@ class InviteViewController: UIViewController, FormViewDelegate{
                         completion(false)
                         self.isSuccess = false
                         //display alert message on status 400
-//                        let alert = UIAlertController(title: "Error Message", message: self.errMess, preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-//                        self.present(alert, animated: true)
-                        
                         let vc = PopUpViewController(text: self.errMess, oneButton: true)
                         vc.modalPresentationStyle = .overCurrentContext
                         vc.modalTransitionStyle = .crossDissolve
@@ -207,6 +246,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
                         completion(true)
                         self.isSuccess = true
                         print("Response status code: \(response.statusCode)")
+                  
                         // status code 200 move to next view
                         let navView = UINavigationController(rootViewController: CongratViewController())
                         navView.modalPresentationStyle = .fullScreen

@@ -171,8 +171,18 @@ class PopUpViewController : UIViewController {
 
     }
     
-    @objc private func dismissSelf(){
-        dismiss(animated: true, completion: nil)
+    @objc private func dismissSelf(sender: UIButton!){
+        sender.backgroundColor = UIColor.white
+        sender.setTitleColor(UIColor.black, for: .normal)
+        sender.layer.borderColor = UIColor.black.cgColor
+        sender.isSelected = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            sender.backgroundColor = UIColor.black
+            sender.setTitleColor(UIColor.white, for: .normal)
+            sender.layer.borderColor = UIColor.white.cgColor
+            sender.isSelected = false
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc private func yesAction(){
