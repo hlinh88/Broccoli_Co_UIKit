@@ -1,0 +1,6 @@
+framework module Pods_BroccoliAndCo {
+  umbrella header "Pods-BroccoliAndCo-umbrella.h"
+
+  export *
+  module * { export * }
+}

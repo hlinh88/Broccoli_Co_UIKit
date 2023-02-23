@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'BroccoliAndCo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for BroccoliAndCo
+	pod 'RSFormView', '~> 2.1.1'
+  pod 'SwiftConfettiView'
+  pod 'SwiftGifOrigin'
+
+  target 'BroccoliAndCoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'BroccoliAndCoUITests' do
+    # Pods for testing
+  end
+
+end

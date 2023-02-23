@@ -1,0 +1,28 @@
+PODS:
+  - IQKeyboardManagerSwift (6.1.1)
+  - RSFormView (2.1.6):
+    - IQKeyboardManagerSwift (~> 6.1.1)
+  - SwiftConfettiView (0.1.0)
+  - SwiftGifOrigin (1.7.0)
+
+DEPENDENCIES:
+  - RSFormView (~> 2.1.1)
+  - SwiftConfettiView
+  - SwiftGifOrigin
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - RSFormView
+    - SwiftConfettiView
+    - SwiftGifOrigin
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
+  RSFormView: b1f30cc1845f15b2807d2d7848089a4eefe47fce
+  SwiftConfettiView: 1bdbc2e6913b6b1c76d8070802b212508ad5c352
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+
+PODFILE CHECKSUM: 742bc4792b521e24f89ee1de27403efd9541ac87
+
+COCOAPODS: 1.11.3
