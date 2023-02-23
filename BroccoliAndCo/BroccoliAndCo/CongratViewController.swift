@@ -91,15 +91,15 @@ class CongratViewController: UIViewController {
         sender.backgroundColor = UIColor.black
         sender.setTitleColor(UIColor.white, for: .normal)
         sender.isSelected = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             sender.backgroundColor = UIColor.white
             sender.setTitleColor(UIColor.black, for: .normal)
             sender.isSelected = false
+            let navView = UINavigationController(rootViewController: CancelInviteViewController())
+            navView.modalPresentationStyle = .fullScreen
+            self.present(navView, animated: true)
         }
-        let navView = UINavigationController(rootViewController: CancelInviteViewController())
-        navView.modalPresentationStyle = .fullScreen
-        present(navView, animated: true)
-        
+         
     }
 
     

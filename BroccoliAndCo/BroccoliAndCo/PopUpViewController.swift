@@ -185,9 +185,16 @@ class PopUpViewController : UIViewController {
         }
     }
     
-    @objc private func yesAction(){
-        let navView = UINavigationController(rootViewController: CancelViewController())
-        navView.modalPresentationStyle = .fullScreen
-        self.present(navView, animated: true)
+    @objc private func yesAction(sender: UIButton!){
+        sender.backgroundColor = UIColor(rgb: 0x8B0000)
+        sender.isSelected = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            sender.backgroundColor = UIColor.red
+            sender.isSelected = false
+            let navView = UINavigationController(rootViewController: CancelViewController())
+            navView.modalPresentationStyle = .fullScreen
+            self.present(navView, animated: true)
+        }
+       
     }
 }

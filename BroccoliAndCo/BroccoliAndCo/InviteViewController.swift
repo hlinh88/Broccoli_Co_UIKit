@@ -31,7 +31,6 @@ class InviteViewController: UIViewController, FormViewDelegate{
     }
     
     @objc private func dismissSelf(sender: UIButton!){
-        
         sender.backgroundColor = UIColor.white
         sender.setTitleColor(UIColor.black, for: .normal)
         sender.layer.borderColor = UIColor.black.cgColor
@@ -203,11 +202,11 @@ class InviteViewController: UIViewController, FormViewDelegate{
     func requestData(name: String,  email: String, _ completion:@escaping (_ isSuccess:Bool)->Void) {
         
         //Validation email: usedemail@blinq.app
-        
-        
-        // TODO: fix loading view
-        let loadingVC = LoadingViewController()
+    
 
+        //Call loading view
+        let loadingVC = LoadingViewController()
+ 
         loadingVC.modalPresentationStyle = .overCurrentContext
 
         loadingVC.modalTransitionStyle = .crossDissolve
@@ -237,10 +236,11 @@ class InviteViewController: UIViewController, FormViewDelegate{
                         self.isSuccess = false
                         loadingVC.dismiss(animated: true, completion: nil)
                         //display alert message on status 400
-                        let vc = PopUpViewController(text: self.errMess, oneButton: true)
-                        vc.modalPresentationStyle = .overCurrentContext
-                        vc.modalTransitionStyle = .crossDissolve
-                        self.present(vc, animated: true, completion: nil)
+                        let popUpVC = PopUpViewController(text: self.errMess, oneButton: true)
+                        popUpVC.modalPresentationStyle = .overCurrentContext
+                        popUpVC.modalTransitionStyle = .crossDissolve
+                        self.present(popUpVC, animated: true, completion: nil)
+                        popUpVC.dismiss(animated: true, completion: nil)
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -249,10 +249,13 @@ class InviteViewController: UIViewController, FormViewDelegate{
                         print("Response status code: \(response.statusCode)")
                         loadingVC.dismiss(animated: true, completion: nil)
                         // status code 200 move to next view
-                        let navView = UINavigationController(rootViewController: CongratViewController())
-                        navView.modalPresentationStyle = .fullScreen
-                        self.present(navView, animated: true)
-                        self.navigationItem.setHidesBackButton(true, animated: true)
+                        // set delay time to dismiss view before navigation
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            let navView = UINavigationController(rootViewController: CongratViewController())
+                            navView.modalPresentationStyle = .fullScreen
+                            self.present(navView, animated: true)
+                            self.navigationItem.setHidesBackButton(true, animated: true)
+                        }
                     }
                 }
             }
