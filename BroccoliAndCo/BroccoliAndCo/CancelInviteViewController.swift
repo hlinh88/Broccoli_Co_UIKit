@@ -31,7 +31,7 @@ class CancelInviteViewController: UIViewController {
         sender.setTitleColor(UIColor.black, for: .normal)
         sender.layer.borderColor = UIColor.black.cgColor
         sender.isSelected = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
             sender.layer.borderColor = UIColor.white.cgColor

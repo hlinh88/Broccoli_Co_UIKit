@@ -41,6 +41,7 @@ class CancelViewController : UIViewController {
         self.view.addSubview(image)
         
         image.translatesAutoresizingMaskIntoConstraints = false
+        
         image.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         image.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 200).isActive = true
         // hard-coded set width and height of the gif

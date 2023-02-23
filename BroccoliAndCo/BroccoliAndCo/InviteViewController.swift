@@ -64,22 +64,25 @@ class InviteViewController: UIViewController, FormViewDelegate{
         submitButton.setTitleColor(UIColor.white, for: .normal)
         submitButton.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 18)
         submitButton.layer.borderWidth = 2
-        submitButton.translatesAutoresizingMaskIntoConstraints = false
         submitButton.addTarget(self, action: #selector(submitButtonAction), for: .touchUpInside)
         
         view.addSubview(submitButton)
+        
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func configureLabels(){
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textColor = UIColor.black
         titleLabel.textAlignment = .center
         titleLabel.text = "Request an invite"
         titleLabel.font = UIFont(name: "MusticaPro-SemiBold", size: 25)
         titleLabel.addBorder(toSide: .bottom, withColor: UIColor.brightGray.cgColor, andThickness: 2.0)
+        
         self.view.addSubview(titleLabel)
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     
@@ -106,8 +109,10 @@ class InviteViewController: UIViewController, FormViewDelegate{
         formView.formConfigurator = formConfigurator
         formView.delegate = self
         formView.viewModel = formModel
-        formView.translatesAutoresizingMaskIntoConstraints = false
+     
         view.addSubview(formView)
+        
+        formView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func configureBackButton(){
@@ -117,10 +122,11 @@ class InviteViewController: UIViewController, FormViewDelegate{
         backButton.setTitleColor(UIColor.white, for: .normal)
         backButton.titleLabel?.font =  UIFont(name: "MusticaPro-SemiBold", size: 18)
         backButton.layer.borderWidth = 2
-        backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
         
         view.addSubview(backButton)
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func configureConstraints(){
@@ -235,6 +241,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
                         completion(false)
                         self.isSuccess = false
                         loadingVC.dismiss(animated: true, completion: nil)
+                        print("Response status code: \(response.statusCode)")
                         //display alert message on status 400
                         let popUpVC = PopUpViewController(text: self.errMess, oneButton: true)
                         popUpVC.modalPresentationStyle = .overCurrentContext
