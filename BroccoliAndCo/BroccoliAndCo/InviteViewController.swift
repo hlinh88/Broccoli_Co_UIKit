@@ -206,13 +206,13 @@ class InviteViewController: UIViewController, FormViewDelegate{
         
         
         // TODO: fix loading view
-//        let loadingVC = LoadingViewController()
-//
-//        loadingVC.modalPresentationStyle = .overCurrentContext
-//
-//        loadingVC.modalTransitionStyle = .crossDissolve
-//
-//        self.present(loadingVC, animated: true, completion: nil)
+        let loadingVC = LoadingViewController()
+
+        loadingVC.modalPresentationStyle = .overCurrentContext
+
+        loadingVC.modalTransitionStyle = .crossDissolve
+
+        self.present(loadingVC, animated: true, completion: nil)
        
         
         let body: [String: Any] = ["name": name, "email": email]
@@ -235,6 +235,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
                         self.errMess = responseDecoded.errorMessage
                         completion(false)
                         self.isSuccess = false
+                        loadingVC.dismiss(animated: true, completion: nil)
                         //display alert message on status 400
                         let vc = PopUpViewController(text: self.errMess, oneButton: true)
                         vc.modalPresentationStyle = .overCurrentContext
@@ -246,7 +247,7 @@ class InviteViewController: UIViewController, FormViewDelegate{
                         completion(true)
                         self.isSuccess = true
                         print("Response status code: \(response.statusCode)")
-                  
+                        loadingVC.dismiss(animated: true, completion: nil)
                         // status code 200 move to next view
                         let navView = UINavigationController(rootViewController: CongratViewController())
                         navView.modalPresentationStyle = .fullScreen
